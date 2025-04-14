@@ -1,4 +1,4 @@
-package com.plcoding.bookpedia
+package com.andriokar.bookpedia
 
 interface Platform {
     val name: String

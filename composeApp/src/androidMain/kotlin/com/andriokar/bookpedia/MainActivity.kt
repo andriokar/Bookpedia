@@ -1,4 +1,4 @@
-package com.plcoding.bookpedia
+package com.andriokar.bookpedia
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
