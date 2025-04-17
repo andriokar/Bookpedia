@@ -4,7 +4,7 @@ import com.andriokar.bookpedia.book.domain.Book
 
 sealed interface BookListAction {
 
-    data class OnSearchQueryChang(val query: String) : BookListAction
+    data class OnSearchQueryChange(val query: String) : BookListAction
 
     data class OnBookClick(val book: Book) : BookListAction
 
