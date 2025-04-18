@@ -120,13 +120,24 @@ fun BookListItem(
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-                book.authors.firstOrNull()?.let {
-                    Text(
-                        text = it,
-                        style = MaterialTheme.typography.bodyLarge,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                if (!book.authors.isEmpty()) {
+                    if (book.authors.size == 2) {
+                        Text(
+                            text = "by ${book.authors[0]}, ${book.authors[1]}",
+                            style = MaterialTheme.typography.bodyLarge,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    } else {
+                        book.authors.firstOrNull()?.let {
+                            Text(
+                                text = "by $it, et all.",
+                                style = MaterialTheme.typography.bodyLarge,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+                        }
+                    }
                 }
                 book.averageRating?.let {
                     Row(
@@ -150,6 +161,7 @@ fun BookListItem(
                 contentDescription = null,
                 modifier = Modifier
                     .size(36.dp)
+                    .align(Alignment.CenterVertically)
             )
         }
     }
