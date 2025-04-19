@@ -123,7 +123,7 @@ fun BookListItem(
                 if (!book.authors.isEmpty()) {
                     if (book.authors.size == 2) {
                         Text(
-                            text = "by ${book.authors[0]}, ${book.authors[1]}",
+                            text = "${book.authors[0]}, ${book.authors[1]}",
                             style = MaterialTheme.typography.bodyLarge,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis
@@ -131,7 +131,7 @@ fun BookListItem(
                     } else {
                         book.authors.firstOrNull()?.let {
                             Text(
-                                text = "by $it, et all.",
+                                text = "$it, et all.",
                                 style = MaterialTheme.typography.bodyLarge,
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis

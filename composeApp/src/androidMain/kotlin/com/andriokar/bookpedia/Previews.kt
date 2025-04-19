@@ -9,7 +9,7 @@ import com.andriokar.bookpedia.book.domain.Book
 import com.andriokar.bookpedia.book.presentation.book_list.components.BookListItem
 import com.andriokar.bookpedia.book.presentation.book_list.components.BookSearchBar
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun BookSearchBarPreviewWithText() {
     MaterialTheme {
@@ -23,7 +23,7 @@ private fun BookSearchBarPreviewWithText() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun BookSearchBarPreviewWithoutText() {
     MaterialTheme {
@@ -37,7 +37,7 @@ private fun BookSearchBarPreviewWithoutText() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun BookListItemPreviewWithTwoAuthors() {
     MaterialTheme {
@@ -61,7 +61,7 @@ private fun BookListItemPreviewWithTwoAuthors() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun BookListItemPreviewWithMultipleAuthors() {
     MaterialTheme {
