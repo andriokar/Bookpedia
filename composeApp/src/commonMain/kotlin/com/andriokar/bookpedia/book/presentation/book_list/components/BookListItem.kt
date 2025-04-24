@@ -163,7 +163,6 @@ fun BookListItem(
                 contentDescription = null,
                 modifier = Modifier
                     .size(36.dp)
-                    .align(Alignment.CenterVertically)
             )
         }
     }

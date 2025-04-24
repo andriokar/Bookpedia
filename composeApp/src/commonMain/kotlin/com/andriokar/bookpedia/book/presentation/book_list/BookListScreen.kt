@@ -112,8 +112,8 @@ fun BookListScreen(
         )
         Surface(
             modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f),
+                .weight(1f)
+                .fillMaxWidth(),
             color = DesertWhite,
             shape = RoundedCornerShape(
                 topStart = 32.dp,
@@ -130,7 +130,6 @@ fun BookListScreen(
                         .widthIn(max = 700.dp)
                         .fillMaxWidth(),
                     containerColor = DesertWhite,
-                    contentColor = SandYellow,
                     indicator = { tabPositions ->
                         TabRowDefaults.SecondaryIndicator(
                             color = SandYellow,
@@ -181,7 +180,6 @@ fun BookListScreen(
                         modifier = Modifier
                             .fillMaxSize(),
                         contentAlignment = Alignment.Center
-
                     ) {
                         when (pageIndex) {
                             0 -> {
@@ -229,7 +227,7 @@ fun BookListScreen(
                                     )
                                 } else {
                                     BookList(
-                                        books = state.searchResults,
+                                        books = state.favoriteBooks,
                                         onBookClick = {
                                             onAction(BookListAction.OnBookClick(it))
                                         },
