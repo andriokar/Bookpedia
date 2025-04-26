@@ -8,6 +8,6 @@ Other folders are for Kotlin code that will be compiled for only the platform in
 
 ### Screenshots:
 #### Book list screen
-Search kotlin books            |  Empty search
-:-------------------------:|:-------------------------:
-<img src="Screenshots/book_search_screen_empty_query.png" alt="Search kotlin books" style="width:25%; height:auto;">|  <img src="Screenshots/book_search_screen_kotlin.png" alt="Empty search" style="width:25%; height:auto;">
+Search kotlin books            |  Empty search | Book details screen
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="Screenshots/book_search_screen_empty_query.png" alt="Search kotlin books" style="width:50%; height:auto;">|  <img src="Screenshots/book_search_screen_kotlin.png" alt="Empty search" style="width:50%; height:auto;"> |  <img src="Screenshots/book_details_screen.png" alt="Book details screen" style="width:50%; height:auto;">

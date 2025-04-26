@@ -157,6 +157,7 @@ fun BlurredImageBackground(
                                     },
                                     contentDescription = stringResource(Res.string.book_cover),
                                     modifier = Modifier
+                                        .padding(4.dp)
                                         .fillMaxSize()
                                         .background(Color.Transparent),
                                     contentScale = if (result.isSuccess) {
