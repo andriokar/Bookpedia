@@ -20,6 +20,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -45,6 +46,7 @@ import cmp_bookpedia.composeapp.generated.resources.remove_from_favorites
 import coil3.compose.rememberAsyncImagePainter
 import com.andriokar.bookpedia.core.presentation.DarkBlue
 import com.andriokar.bookpedia.core.presentation.DesertWhite
+import com.andriokar.bookpedia.core.presentation.LightBlue
 import com.andriokar.bookpedia.core.presentation.SandYellow
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -128,6 +130,9 @@ fun BlurredImageBackground(
                 modifier = Modifier
                     .height(230.dp)
                     .aspectRatio(2 / 3f),
+                colors = CardDefaults.elevatedCardColors(
+                    contentColor = Color.Transparent
+                ),
                 shape = RoundedCornerShape(8.dp),
                 elevation = CardDefaults.elevatedCardElevation(
                     defaultElevation = 15.dp
@@ -141,6 +146,7 @@ fun BlurredImageBackground(
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
+                            CircularProgressIndicator()
                         }
 
                         else -> {
@@ -166,7 +172,7 @@ fun BlurredImageBackground(
                                         .background(
                                             brush = Brush.radialGradient(
                                                 colors = listOf(
-                                                    SandYellow, Color.Transparent
+                                                    Color.White, Color.Transparent
                                                 ),
                                                 radius = 70f
                                             )
