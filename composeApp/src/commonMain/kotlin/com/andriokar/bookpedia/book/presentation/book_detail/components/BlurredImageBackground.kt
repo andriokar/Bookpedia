@@ -47,6 +47,7 @@ import coil3.compose.rememberAsyncImagePainter
 import com.andriokar.bookpedia.core.presentation.DarkBlue
 import com.andriokar.bookpedia.core.presentation.DesertWhite
 import com.andriokar.bookpedia.core.presentation.LightBlue
+import com.andriokar.bookpedia.core.presentation.PulseAnimation
 import com.andriokar.bookpedia.core.presentation.SandYellow
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -146,7 +147,11 @@ fun BlurredImageBackground(
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
-                            CircularProgressIndicator()
+                            PulseAnimation(
+                                modifier = Modifier
+                                    .size(60.dp)
+                                    .align(Alignment.Center)
+                            )
                         }
 
                         else -> {

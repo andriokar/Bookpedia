@@ -38,6 +38,7 @@ import cmp_bookpedia.composeapp.generated.resources.book_error_2
 import coil3.compose.rememberAsyncImagePainter
 import com.andriokar.bookpedia.book.domain.Book
 import com.andriokar.bookpedia.core.presentation.LightBlue
+import com.andriokar.bookpedia.core.presentation.PulseAnimation
 import com.andriokar.bookpedia.core.presentation.SandYellow
 import org.jetbrains.compose.resources.painterResource
 import kotlin.math.round
@@ -86,7 +87,9 @@ fun BookListItem(
                     }
                 )
                 when (val result = imageLoadResult) {
-                    null -> CircularProgressIndicator()
+                    null -> PulseAnimation(
+                        modifier = Modifier.size(60.dp)
+                    )
 
                     else -> {
                         Image(
