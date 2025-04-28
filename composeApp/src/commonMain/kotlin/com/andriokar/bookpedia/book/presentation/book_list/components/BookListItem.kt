@@ -1,5 +1,7 @@
 package com.andriokar.bookpedia.book.presentation.book_list.components
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -29,12 +31,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import cmp_bookpedia.composeapp.generated.resources.Res
 import cmp_bookpedia.composeapp.generated.resources.book_error_2
+import coil3.compose.AsyncImagePainter
 import coil3.compose.rememberAsyncImagePainter
 import com.andriokar.bookpedia.book.domain.Book
 import com.andriokar.bookpedia.core.presentation.LightBlue
@@ -86,6 +91,17 @@ fun BookListItem(
                         imageLoadResult = Result.failure(it.result.throwable)
                     }
                 )
+
+                val painterState by painter.state.collectAsStateWithLifecycle()
+                val transition by animateFloatAsState(
+                    targetValue = if (painterState is AsyncImagePainter.State.Success) {
+                        1f
+                    } else {
+                        0f
+                    },
+                    animationSpec = tween(delayMillis = 800)
+                )
+
                 when (val result = imageLoadResult) {
                     null -> PulseAnimation(
                         modifier = Modifier.size(60.dp)
@@ -109,6 +125,12 @@ fun BookListItem(
                                     ratio = 0.65f,
                                     matchHeightConstraintsFirst = true
                                 )
+                                .graphicsLayer {
+                                    rotationY = (1f - transition) * 30f
+                                    val scale = 0.8f + (0.2f * transition)
+                                    scaleX = scale
+                                    scaleY = scale
+                                }
                         )
                     }
                 }
